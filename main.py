@@ -65,10 +65,14 @@ def test_flatten_5():
 
 
 def distinct(iterable: Iterable):
-    c = collections.Counter()
+    # c = collections.Counter()
+    my_list = list()
     for word in iterable:
-        c[word] += 1
-    for unic in c:
+        if word in my_list:
+            continue
+        my_list.append(word)
+        # c[word] += 1
+    for unic in my_list:
         yield unic
 
 
